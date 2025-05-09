@@ -6,17 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3D958BA82DCDFD38001BD5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D958BA42DCDFD38001BD5E4 /* Assets.xcassets */; };
+		3D958BA92DCDFD38001BD5E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BA52DCDFD38001BD5E4 /* ContentView.swift */; };
+		3D958BAA2DCDFD38001BD5E4 /* Torche_SemaphoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BA62DCDFD38001BD5E4 /* Torche_SemaphoreApp.swift */; };
+		3D958BAC2DCDFD54001BD5E4 /* PageAccueil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BAB2DCDFD54001BD5E4 /* PageAccueil.swift */; };
+		3D958BB02DCDFE84001BD5E4 /* ChampDeTexte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BAF2DCDFE84001BD5E4 /* ChampDeTexte.swift */; };
+		3D958BB22DCE06CB001BD5E4 /* Bouton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BB12DCE06CB001BD5E4 /* Bouton.swift */; };
+		3D958BB52DCE08FD001BD5E4 /* PageAccueilVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BB42DCE08FD001BD5E4 /* PageAccueilVM.swift */; };
+		3D958BB72DCE23D4001BD5E4 /* EncartInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BB62DCE23D4001BD5E4 /* EncartInfos.swift */; };
+		3D958BB92DCE2A65001BD5E4 /* PageInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BB82DCE2A65001BD5E4 /* PageInfos.swift */; };
+		3D958BBB2DCE31F0001BD5E4 /* BoutonRond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BBA2DCE31F0001BD5E4 /* BoutonRond.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		3D958B962DCDFD2E001BD5E4 /* Torche Semaphore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Torche Semaphore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D958BA42DCDFD38001BD5E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D958BA52DCDFD38001BD5E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3D958BA62DCDFD38001BD5E4 /* Torche_SemaphoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Torche_SemaphoreApp.swift; sourceTree = "<group>"; };
+		3D958BAB2DCDFD54001BD5E4 /* PageAccueil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAccueil.swift; sourceTree = "<group>"; };
+		3D958BAF2DCDFE84001BD5E4 /* ChampDeTexte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampDeTexte.swift; sourceTree = "<group>"; };
+		3D958BB12DCE06CB001BD5E4 /* Bouton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bouton.swift; sourceTree = "<group>"; };
+		3D958BB42DCE08FD001BD5E4 /* PageAccueilVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAccueilVM.swift; sourceTree = "<group>"; };
+		3D958BB62DCE23D4001BD5E4 /* EncartInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncartInfos.swift; sourceTree = "<group>"; };
+		3D958BB82DCE2A65001BD5E4 /* PageInfos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageInfos.swift; sourceTree = "<group>"; };
+		3D958BBA2DCE31F0001BD5E4 /* BoutonRond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonRond.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		3D958B982DCDFD2E001BD5E4 /* Torche Semaphore */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Torche Semaphore";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3D958B932DCDFD2E001BD5E4 /* Frameworks */ = {
@@ -32,7 +47,7 @@
 		3D958B8D2DCDFD2E001BD5E4 = {
 			isa = PBXGroup;
 			children = (
-				3D958B982DCDFD2E001BD5E4 /* Torche Semaphore */,
+				3D958BA72DCDFD38001BD5E4 /* Torche Semaphore */,
 				3D958B972DCDFD2E001BD5E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +58,47 @@
 				3D958B962DCDFD2E001BD5E4 /* Torche Semaphore.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3D958BA72DCDFD38001BD5E4 /* Torche Semaphore */ = {
+			isa = PBXGroup;
+			children = (
+				3D958BA62DCDFD38001BD5E4 /* Torche_SemaphoreApp.swift */,
+				3D958BAD2DCDFE6D001BD5E4 /* Vue */,
+				3D958BB32DCE08E9001BD5E4 /* VueModele */,
+				3D958BA42DCDFD38001BD5E4 /* Assets.xcassets */,
+			);
+			path = "Torche Semaphore";
+			sourceTree = "<group>";
+		};
+		3D958BAD2DCDFE6D001BD5E4 /* Vue */ = {
+			isa = PBXGroup;
+			children = (
+				3D958BA52DCDFD38001BD5E4 /* ContentView.swift */,
+				3D958BAB2DCDFD54001BD5E4 /* PageAccueil.swift */,
+				3D958BB82DCE2A65001BD5E4 /* PageInfos.swift */,
+				3D958BAE2DCDFE73001BD5E4 /* Composants */,
+			);
+			path = Vue;
+			sourceTree = "<group>";
+		};
+		3D958BAE2DCDFE73001BD5E4 /* Composants */ = {
+			isa = PBXGroup;
+			children = (
+				3D958BAF2DCDFE84001BD5E4 /* ChampDeTexte.swift */,
+				3D958BB62DCE23D4001BD5E4 /* EncartInfos.swift */,
+				3D958BB12DCE06CB001BD5E4 /* Bouton.swift */,
+				3D958BBA2DCE31F0001BD5E4 /* BoutonRond.swift */,
+			);
+			path = Composants;
+			sourceTree = "<group>";
+		};
+		3D958BB32DCE08E9001BD5E4 /* VueModele */ = {
+			isa = PBXGroup;
+			children = (
+				3D958BB42DCE08FD001BD5E4 /* PageAccueilVM.swift */,
+			);
+			path = VueModele;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +115,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				3D958B982DCDFD2E001BD5E4 /* Torche Semaphore */,
 			);
 			name = "Torche Semaphore";
 			packageProductDependencies = (
@@ -109,6 +162,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D958BA82DCDFD38001BD5E4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +173,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D958BB52DCE08FD001BD5E4 /* PageAccueilVM.swift in Sources */,
+				3D958BBB2DCE31F0001BD5E4 /* BoutonRond.swift in Sources */,
+				3D958BAC2DCDFD54001BD5E4 /* PageAccueil.swift in Sources */,
+				3D958BB02DCDFE84001BD5E4 /* ChampDeTexte.swift in Sources */,
+				3D958BB72DCE23D4001BD5E4 /* EncartInfos.swift in Sources */,
+				3D958BB22DCE06CB001BD5E4 /* Bouton.swift in Sources */,
+				3D958BA92DCDFD38001BD5E4 /* ContentView.swift in Sources */,
+				3D958BB92DCE2A65001BD5E4 /* PageInfos.swift in Sources */,
+				3D958BAA2DCDFD38001BD5E4 /* Torche_SemaphoreApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,11 +319,12 @@
 				DEVELOPMENT_TEAM = BK8PRMYFUA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Torche Sémaphore";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -284,11 +348,12 @@
 				DEVELOPMENT_TEAM = BK8PRMYFUA;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Torche Sémaphore";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
