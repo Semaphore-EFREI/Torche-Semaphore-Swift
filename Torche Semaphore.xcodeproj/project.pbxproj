@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2CB4732DD4909D008BFBA2 /* BoutonCopier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2CB4722DD4909D008BFBA2 /* BoutonCopier.swift */; };
+		3D2CB4752DD4952B008BFBA2 /* ChampDeNombre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2CB4742DD4952B008BFBA2 /* ChampDeNombre.swift */; };
 		3D958BA82DCDFD38001BD5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D958BA42DCDFD38001BD5E4 /* Assets.xcassets */; };
 		3D958BA92DCDFD38001BD5E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BA52DCDFD38001BD5E4 /* ContentView.swift */; };
 		3D958BAA2DCDFD38001BD5E4 /* Torche_SemaphoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D958BA62DCDFD38001BD5E4 /* Torche_SemaphoreApp.swift */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D2CB4722DD4909D008BFBA2 /* BoutonCopier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonCopier.swift; sourceTree = "<group>"; };
+		3D2CB4742DD4952B008BFBA2 /* ChampDeNombre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChampDeNombre.swift; sourceTree = "<group>"; };
 		3D958B962DCDFD2E001BD5E4 /* Torche Semaphore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Torche Semaphore.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D958BA42DCDFD38001BD5E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D958BA52DCDFD38001BD5E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,8 +90,10 @@
 			isa = PBXGroup;
 			children = (
 				3D958BAF2DCDFE84001BD5E4 /* ChampDeTexte.swift */,
+				3D2CB4742DD4952B008BFBA2 /* ChampDeNombre.swift */,
 				3D958BB62DCE23D4001BD5E4 /* EncartInfos.swift */,
 				3D958BB12DCE06CB001BD5E4 /* Bouton.swift */,
+				3D2CB4722DD4909D008BFBA2 /* BoutonCopier.swift */,
 				3D958BBA2DCE31F0001BD5E4 /* BoutonRond.swift */,
 			);
 			path = Composants;
@@ -173,10 +179,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2CB4732DD4909D008BFBA2 /* BoutonCopier.swift in Sources */,
 				3D958BB52DCE08FD001BD5E4 /* PageAccueilVM.swift in Sources */,
 				3D958BBB2DCE31F0001BD5E4 /* BoutonRond.swift in Sources */,
 				3D958BAC2DCDFD54001BD5E4 /* PageAccueil.swift in Sources */,
 				3D958BB02DCDFE84001BD5E4 /* ChampDeTexte.swift in Sources */,
+				3D2CB4752DD4952B008BFBA2 /* ChampDeNombre.swift in Sources */,
 				3D958BB72DCE23D4001BD5E4 /* EncartInfos.swift in Sources */,
 				3D958BB22DCE06CB001BD5E4 /* Bouton.swift in Sources */,
 				3D958BA92DCDFD38001BD5E4 /* ContentView.swift in Sources */,

@@ -17,6 +17,7 @@ class PageAccueilVM: ObservableObject {
     @Published var estEnCours: Bool = false
     
     private var tacheTorche: Task<Void, any Error>? = nil
+    private let horloge = ContinuousClock()
     
     
     
@@ -24,33 +25,44 @@ class PageAccueilVM: ObservableObject {
     
     func lancerLaSéquence(nombre: Int, fréquence: Int) {
         guard fréquence > 0 else { return }
-        let séquence = intEnBinaire(nombre: nombre)
-        let période = 1.0 / Double(fréquence)
+        let séquence = encadrerBinaire(valeur: nombre)
+        let période: Duration = .seconds(1) / fréquence
 
         // Annule la tâche précédente avant de lancer la nouvelle
         tacheTorche?.cancel()
-        
         estEnCours = true
+        
         tacheTorche = Task { [weak self] in
             guard let self = self else { return }
+            
             defer {
                 Task { @MainActor in
                     self.estEnCours = false  // Remis à false sur le MainActor à la toute fin (même si annulation/erreur)
-                    self.basculerTorche(on: false)
                 }
             }
-            for char in séquence {
-                // Vérifie si la Task a été annulée
-                try Task.checkCancellation()
+            
+            guard let appareil = AVCaptureDevice.default(for: .video), appareil.hasTorch else {
+                print("Torch is not available")
+                return
+            }
+            
+            do {
+                try appareil.lockForConfiguration()
+                defer {
+                    appareil.torchMode = .off // Sécurité finale
+                    appareil.unlockForConfiguration()
+                }
                 
-                let isOn = (char == "1")
-                await MainActor.run {
-                    self.basculerTorche(on: isOn)
+                for char in séquence {
+                    try Task.checkCancellation()
+                    let début = horloge.now
+                    appareil.torchMode = (char == "1") ? .on : .off
+                    try await horloge.sleep(until: début + période)
                 }
-                try? await Task.sleep(nanoseconds: UInt64(période * 1_000_000_000))
-            }
-            await MainActor.run {
-                self.basculerTorche(on: false) // Sécurité
+                appareil.torchMode = .off
+                
+            } catch {
+                print("Erreur de configuration de la torche : \(error)")
             }
         }
     }
@@ -59,41 +71,38 @@ class PageAccueilVM: ObservableObject {
     func arrêterLaSéquence() {
         tacheTorche?.cancel()
         tacheTorche = nil // Nettoyage
-        // Éteint la torche immédiatement
-        Task { @MainActor in
-            self.basculerTorche(on: false)
-        }
         estEnCours = false
+        
+        Task {
+            if let appareil = AVCaptureDevice.default(for: .video), appareil.hasTorch {
+                do {
+                    try appareil.lockForConfiguration()
+                    appareil.torchMode = .off
+                    appareil.unlockForConfiguration()
+                } catch {
+                    print("Torch could not be turned off")
+                }
+            }
+        }
     }
     
     
-    private func intEnBinaire(nombre: Int) -> String {
-        let binaire = String(nombre, radix: 2)
+    func intEnBinaire(valeur: Int) -> String {
+        let binaire = String(valeur, radix: 2)
+        return binaire
+    }
+    
+    func encadrerBinaire(valeur: Int) -> String {
+        let binaire = String(valeur, radix: 2)
         let binaireEncadré = "10" + binaire + "01"
-        print(binaireEncadré)
         return binaireEncadré
     }
     
-    
-    private func basculerTorche(on: Bool) {
-        guard let appareil = AVCaptureDevice.default(for: .video) else { return }
-
-        if appareil.hasTorch {
-            do {
-                try appareil.lockForConfiguration()
-
-                if on == true {
-                    appareil.torchMode = .on
-                } else {
-                    appareil.torchMode = .off
-                }
-
-                appareil.unlockForConfiguration()
-            } catch {
-                print("Torch could not be used")
+    func binaireEnInt(valeur: String) -> Int? {
+        guard valeur.allSatisfy({ $0 == "0" || $0 == "1" }) else {
+                return nil
             }
-        } else {
-            print("Torch is not available")
-        }
+
+        return Int(valeur, radix: 2)
     }
 }

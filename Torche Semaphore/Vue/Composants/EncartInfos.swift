@@ -21,17 +21,6 @@ struct EncartInfos: View {
     var body: some View {
         VStack(spacing: 12) {
             HStack {
-                Text("Binaire")
-                    .fontWeight(.semibold)
-                    .foregroundStyle(Color.textePrimaire)
-                
-                Spacer()
-                
-                Text(intEnBinaire(valeur: valeur))
-                    .foregroundStyle(Color.texteTertiaire)
-            }
-            
-            HStack {
                 Text("Binaire encadré")
                     .fontWeight(.semibold)
                     .foregroundStyle(Color.textePrimaire)

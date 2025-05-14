@@ -1,19 +1,19 @@
 //
-//  ChampDeTexte.swift
+//  ChampDeNombre.swift
 //  Torche Semaphore
 //
-//  Created by Thomas Le Bonnec on 09/05/2025.
+//  Created by Thomas Le Bonnec on 14/05/2025.
 //
 
 import SwiftUI
 
-struct ChampDeTexte: View {
+struct ChampDeNombre: View {
     
     // MARK: Attributs
     
     var entête: String
     var exemple: String
-    @Binding var valeur: String
+    @Binding var valeur: Int?
     
     @FocusState private var champFocus: Bool
     
@@ -29,7 +29,7 @@ struct ChampDeTexte: View {
             
             HStack {
                 Group {
-                    TextField("", text: $valeur, prompt: Text(exemple).foregroundStyle(Color.texteQuaternaire))
+                    TextField("", value: $valeur, format: .number, prompt: Text(exemple).foregroundStyle(Color.texteQuaternaire))
                         .foregroundStyle(Color.textePrimaire)
                         .keyboardType(.numberPad)
                         .focused($champFocus)
@@ -39,7 +39,7 @@ struct ChampDeTexte: View {
                 .background(Color.fondPrimaire)
                 .cornerRadius(8)
                 
-                BoutonCopier(valeur: valeur.isEmpty ? exemple : valeur)
+                BoutonCopier(valeur: valeur.map { String($0) } ?? exemple)
             }
         }
     }
@@ -50,5 +50,5 @@ struct ChampDeTexte: View {
 
 
 #Preview {
-    ChampDeTexte(entête: "Entête", exemple: "96543", valeur: .constant("01001011010"))
+    ChampDeNombre(entête: "Entête", exemple: "96543", valeur: .constant(085436))
 }

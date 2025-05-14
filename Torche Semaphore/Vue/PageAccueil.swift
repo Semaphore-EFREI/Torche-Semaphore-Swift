@@ -13,7 +13,8 @@ struct PageAccueil: View {
     
     @StateObject var vm = PageAccueilVM()
     
-    @State var valeur: Int? = nil
+    @State var valeurDécimale: Int? = nil
+    @State var valeurBinaire: String = ""
     @State var fréquence: Int? = nil
     
     
@@ -31,8 +32,9 @@ struct PageAccueil: View {
             
             
             VStack(spacing: 24) {
-                ChampDeTexte(entête: "Valeur à transmettre", exemple: "823 766", valeur: $valeur)
-                ChampDeTexte(entête: "Fréquence en Hz (= bits par seconde)", exemple: "20", valeur: $fréquence)
+                ChampDeNombre(entête: "Valeur à transmettre (décimal)", exemple: "823 766", valeur: $valeurDécimale)
+                ChampDeTexte(entête: "Valeur à transmettre (binaire)", exemple: "11001001000111010110", valeur: $valeurBinaire)
+                ChampDeNombre(entête: "Fréquence en Hz (= bits par seconde)", exemple: "20", valeur: $fréquence)
             }
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
@@ -45,7 +47,7 @@ struct PageAccueil: View {
             }
             
             
-            EncartInfos(valeur: valeur ?? 823766, fréquence: fréquence ?? 20)
+            EncartInfos(valeur: valeurDécimale ?? 823766, fréquence: fréquence ?? 20)
             
             
             if vm.estEnCours {
@@ -54,9 +56,20 @@ struct PageAccueil: View {
                 }
             } else {
                 Bouton(titre: "Envoyer") {
-                    vm.lancerLaSéquence(nombre: valeur ?? 823766, fréquence: fréquence ?? 20)
+                    vm.lancerLaSéquence(nombre: valeurDécimale ?? 823766, fréquence: fréquence ?? 20)
                 }
             }
+        }
+        .onChange(of: valeurBinaire) { ancienneValeur, nouvelleValeur in
+            valeurBinaire = nouvelleValeur.filter { $0 == "0" || $0 == "1" }
+            valeurDécimale = vm.binaireEnInt(valeur: nouvelleValeur)
+        }
+        .onChange(of: valeurDécimale ?? -1) { ancienneValeur, nouvelleValeur in
+            if nouvelleValeur == -1 {
+                valeurBinaire = ""
+                return
+            }
+            valeurBinaire = vm.intEnBinaire(valeur: nouvelleValeur)
         }
     }
 }
