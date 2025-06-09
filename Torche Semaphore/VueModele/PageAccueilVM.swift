@@ -53,11 +53,13 @@ class PageAccueilVM: ObservableObject {
                     appareil.unlockForConfiguration()
                 }
                 
-                for char in séquence {
+                let début = horloge.now
+                
+                for (index, char) in séquence.enumerated() {
                     try Task.checkCancellation()
-                    let début = horloge.now
                     appareil.torchMode = (char == "1") ? .on : .off
-                    try await horloge.sleep(until: début + période)
+                    let prochainTick = début.advanced(by: période * Int64(index + 1))
+                    try await horloge.sleep(until: prochainTick)
                 }
                 appareil.torchMode = .off
                 
